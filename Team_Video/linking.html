@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Linking Table Form</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <h1>Linking Table Form</h1>
+    <form>
+      <label for="dropdown">Select:</label>
+      <select id="dropdown" name="dropdown">
+        <option value="role">Role</option>
+        <option value="actor">Actor</option>
+        <option value="language">Language</option>
+        <option value="genre">Genre</option>
+        <option value="country">Country</option>
+        <option value="films">Films</option>
+      </select><br><br>
+
+      <label for="id-1">ID-1:</label>
+      <input type="text" id="id-1" name="id-1"><br><br>
+
+      <div id="role-id">
+        <label for="role-id-input">Role ID:</label>
+        <input type="text" id="role-id-input" name="role-id-input"><br><br>
+      </div>
+
+      <label for="id-2">ID-2:</label>
+      <input type="text" id="id-2" name="id-2"><br><br>
+
+      <input type="submit" value="Submit">
+    </form>
+    <nav>
+      
+        <a href="film.html">Film Form</a>
+        <a href="linking.html">Linking Table Form</a>
+        <a href="people.html">People Form</a>
+        <a href="input.html">Input Form</a>
+        <a href="search.html">Search Table</a>
+    </nav>
+    <script>
+      var dropdown = document.getElementById("dropdown");
+      var roleID = document.getElementById("role-id");
+
+      dropdown.addEventListener("change", function() {
+        if (dropdown.value === "role") {
+          roleID.style.display = "block";
+        } else {
+          roleID.style.display = "none";
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Team_Video</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <h1>Team_Video</h1>
+    <div style="display:flex; flex-wrap: wrap;">
+      <div style="flex:1; margin:5px;">
+        <h2>Film</h2>
+        <form>
+          <label for="title">Title:</label>
+          <input type="text" id="title" name="title"><br><br>
+
+          <label for="runtime">Runtime (min):</label>
+          <input type="number" id="runtime" name="runtime"><br><br>
+
+          <label for="release-date">Release Date:</label>
+          <input type="date" id="release-date" name="release-date"><br><br>
+
+          <label for="description">Description:</label>
+          <textarea id="description" name="description"></textarea><br><br>
+
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+
+      <div style="flex:1; margin:5px;">
+        <h2>Linking Tables</h2>
+        <form>
+          <legend>Linking Tables</legend>
+          <label for="dropdown">Select:</label>
+          <select id="dropdown" name="dropdown">
+            <option value="select">Select</option>
+            <option value="language">Film->Language</option>
+            <option value="role">Person->Film->Role</option>
+            <option value="genre">Film->Genre</option>
+            <option value="country">Services->Country</option>
+            <option value="films">Services->Films</option>
+          </select><br><br>
+      
+          <label for="id-1">ID-1:</label>
+          <input type="text" id="id-1" name="id-1"><br><br>
+      
+          <label for="id-2">ID-2:</label>
+          <input type="text" id="id-2" name="id-2"><br><br>
+
+          <div id="role-id-container" style="display:none;">
+            <label for="role-id">Role ID:</label>
+            <input type="text" id="role-id" name="role-id"><br><br>
+          </div>
+      
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+      
+      <script>
+        document.getElementById("dropdown").addEventListener("change", function() {
+          var selectedValue = this.value;
+          var roleContainer = document.getElementById("role-id-container");
+          
+          if (selectedValue === "role") {
+            roleContainer.style.display = "block";
+          } else {
+            roleContainer.style.display = "none";
+          }
+        });
+      </script>
+
+      <div style="flex:1; margin:5px;">
+        <h2>People</h2>
+        <form>
+          <label for="first-name">First Name:</label>
+          <input type="text" id="first-name" name="first-name"><br><br>
+
+          <label for="last-name">Last Name:</label>
+          <input type="text" id="last-name" name="last-name"><br><br>
+
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+
+      <div style="flex:1; margin:5px;">
+        <h2>Input</h2>
+        <form>
+          <label for="category">Select a Category:</label>
+          <select id="category" name="category">
+            <option value="select">Select</option>
+            <option value="language">Language</option>
+            <option value="genre">Genre</option>
+            <option value="country">Country</option>
+            <option value="guild">Guild</option>
+            <option value="services">Services</option>
+            <option value="role">Role</option>
+          </select><br><br>
+    
+          <label for="inputValue">Enter a Value:</label>
+          <input type="text" id="inputValue" name="inputValue"><br><br>
+    
+          <input type="submit" value="Submit">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
